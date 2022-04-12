@@ -9,7 +9,10 @@ function getMessage() {
 
     // validate that msg is not empty string
     if (msg !== '') {
-        let message = reverseMessageA(msg);
+        // convert to lowercase
+        msg = msg.toLowerCase();
+
+        let message = reverseMessageB(msg);
         displayMessage(message);
         clrInputBox();
     } else {
@@ -27,6 +30,13 @@ function reverseMessageA(msg) {
         let currentChar = msg[i];
         revMessage += currentChar;
     }
+
+    return revMessage;
+}
+
+function reverseMessageB (msg) {
+    let revMessage = "";
+    revMessage = msg.split("").reverse().join("");
 
     return revMessage;
 }
